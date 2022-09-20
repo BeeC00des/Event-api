@@ -18,17 +18,17 @@ const cloudinary = require('cloudinary').v2;
 // 	.catch(error => {console.log(error)});
 
 
-// cloudinary.uploader.upload("./assets/dog.mp4", {resource_type: "video", public_id: "dog"})
-// 	.then(result => {console.log(result)})
-// 	.catch(error => {console.log(error)});
+cloudinary.uploader.upload("./assets/dog.mp4", {resource_type: "video", public_id: "dog"})
+	.then(result => {console.log(result)})
+	.catch(error => {console.log(error)});
 
 
 //////
 // Public ID - Naming Options
 //////
-// cloudinary.uploader.upload("./assets/cat.jpg", {use_filename: true, unique_filename: true})
-// 	.then(result => {console.log(result)})
-// 	.catch(error => {console.log(error)});
+cloudinary.uploader.upload("./assets/cat.jpg", {use_filename: true, unique_filename: true})
+	.then(result => {console.log(result)})
+	.catch(error => {console.log(error)});
 
 // cloudinary.uploader.upload("./assets/cat.jpg", {use_filename: true, unique_filename: false})
 // 	.then(result => {console.log(result)})
@@ -52,9 +52,7 @@ const cloudinary = require('cloudinary').v2;
 //////
 // Upload Source Options
 //////
-cloudinary.uploader.upload("https://unsplash.com/photos/4CaVbHUXf5o")
-	.then(result => {console.log(result)})
-	.catch(error => {console.log(error)});
+
 
 // cloudinary.uploader.upload("s3://my-bucket/my-path/example.jpg")
 // 	.then(result => {console.log(result)})
