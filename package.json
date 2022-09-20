@@ -1,0 +1,25 @@
+{
+  "name": "song-api",
+  "version": "1.0.0",
+  "description": "This application express a basic crud operation for a fullstack web application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-watch": "nodemon index.js",
+    "dev": " npm run start-watch"
+  },
+
+  "author": "Ajayi Bolarinwa",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
