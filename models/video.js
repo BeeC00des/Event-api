@@ -10,6 +10,6 @@ const VideoSchema = new Schema({
 });
 
 // Create model for todo
-const Video = mongoose.model('video', SongSchema);
+const Video = mongoose.model('video', VideoSchema);
 
 module.exports = Video;

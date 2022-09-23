@@ -2,8 +2,7 @@ const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const Song = require('../models/song');
-
-// const Video = require('../models/video');
+const Video = require('../models/video');
 
 router.get('/', (req, res) => {
  return res.json({name:"ade on fire"});
@@ -20,23 +19,42 @@ router.get("/song/:id", (req,res)=>{
   .then((data) => res.json(data))
 })
 
-router.get('/song', (req, res, next) => {
-  // get placeholder
+router.get('/songs', (req, res, next) => {
   Song.find({})
   .then((data) => res.json(data))
   .catch(next);
 });
 
 
-router.get("/videos", (req, res) => {
-  return res.json({action:"../../assets/dog.mp4"});
-});
-
-
-
 router.delete("/song/:id", (req, res, next) => {
   // delete placeholder
   Song.findOneAndDelete({ _id: req.params.id })
+    .then((data) => res.json(data))
+    .catch(next);
+});
+
+
+router.get("/videos", (req, res, next) => {
+  Video.find({})
+  .then((data) => res.json(data))
+  .catch(next);
+});
+
+router.post('/video',(req, res, next) =>{
+  Video.create(req.body)
+  .then((data) => res.json(data))
+  .catch((error)=> console.log(error))
+});
+
+router.get("/video/:id", (req,res)=>{
+  Video.findOne({_id:req.params.id})
+  .then((data) => res.json(data))
+})
+
+
+
+router.delete("/video/:id", (req, res, next) => {
+  Video.findOneAndDelete({ _id: req.params.id })
     .then((data) => res.json(data))
     .catch(next);
 });
